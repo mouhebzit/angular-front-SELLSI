@@ -1,0 +1,21 @@
+<mat-grid-list cols="6"  rowHeight="800">
+  <mat-grid-tile *ngFor="let column of columns"
+                 [colspan]="column.cols"
+                 [rowspan]="column.rows">
+    <div class="sub-menu-container">
+      <div class="span-title-container" [ngClass]="{'center-title': column.name==='TOP VENTES'}">
+        <span class="span-title">{{column.name}}</span>
+      </div>
+      <nav class="link-grid" [ngClass] = "column.name==='TOP VENTES' ? 'link-flex' : 'link-grid'">
+        <a *ngFor="let link of column.links" href="#">{{ link }}</a>
+        <a *ngFor="let product of column.products" href="#">
+          <submenu-product></submenu-product>
+        </a>
+      </nav>
+    </div>
+
+  </mat-grid-tile>
+</mat-grid-list>
+
+
+

@@ -1,0 +1,30 @@
+<mat-toolbar>
+  <mat-toolbar-row class="header-info">
+    <span>Inscrivez-vous à la newsletter SELLSI, accédez en avant première aux bons plans & nouveautés ! </span>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row class="center-row">
+    <span class="logo">S&#x039E;LLSI</span>
+    <span class="sublogo">à ne pas rater</span>
+    <div class="search-form-container">
+      <mat-form-field class="search-form" >
+        <input matInput
+               placeholder="Rechercher un produit, une marque.....">
+        <mat-icon matPrefix>search</mat-icon>
+      </mat-form-field>
+    </div>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-tab-group [selectedIndex]="activeTab" (focusChange)="onTabFocus($event)" (selectedTabChange)="onTabChange($event)" animationDuration="0ms" mat-stretch-tabs="false" mat-align-tabs="center">
+  <mat-tab *ngFor="let tab of tabs; let i = index">
+    <ng-template mat-tab-label>
+        <span (mouseover)="onTabHover(i)">{{ tab }}</span>
+    </ng-template>
+    <ng-template matTabContent>
+      <parfumes-menu></parfumes-menu>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>
+

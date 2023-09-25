@@ -1,0 +1,79 @@
+@font-face {
+  font-family: 'Montserrat-Light-Alt1';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://github.com/Differentunic/Montserrat-Light-Alt1/blob/main/Montserrat-Light-Alt1.woff2?raw=true) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+.mat-toolbar {
+  background-color: white;
+}
+
+.center-row {
+  text-align: center;
+  justify-content: center;
+}
+
+.search-form {
+  margin-left: 50px;
+}
+
+.search-form {
+  height: 45px;
+  width: 660px;
+  background: #f2f2f2;
+  border: 1px solid #bdbdbd;
+  border-radius: 100px;
+  flex-direction: row;
+}
+
+.mat-form-text-field{
+  height: 45px;
+  width: 660px;
+  border-radius: 100px;
+}
+
+.search-form input{
+  height: 45px;
+  width: 660px;
+  border-radius: 100px;
+}
+
+.search-form-container{
+  display: flex;
+  align-items: flex-start;
+}
+
+
+
+.header-info{
+  background: lightblue;
+  font-size: 13px;
+  text-align: center;
+  justify-content: center;
+  height: 25px;
+}
+
+.nav-header-menu{
+  justify-content: center;
+}
+
+span {
+  color: black;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.logo {
+  font-family: 'Montserrat-Light-Alt1', sans-serif;
+  font-size: 52px;
+}
+
+.sublogo {
+  margin-left: 17px;
+  color: darkolivegreen;
+}
