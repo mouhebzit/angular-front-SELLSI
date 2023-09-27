@@ -5,6 +5,7 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {MatButtonModule} from "@angular/material/button";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatCardModule} from "@angular/material/card";
+import { OverlayModule } from '@angular/cdk/overlay';
 @NgModule({
 
   imports: [
@@ -13,7 +14,8 @@ import {MatCardModule} from "@angular/material/card";
     MatGridListModule,
     MatButtonModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    OverlayModule,
   ],
   exports: [
     MatToolbarModule,
@@ -21,7 +23,8 @@ import {MatCardModule} from "@angular/material/card";
     MatGridListModule,
     MatButtonModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    OverlayModule,
   ]
 })
 export class MaterialModule{ }

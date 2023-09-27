@@ -13,6 +13,9 @@ import {ParfumesComponent} from "./components/header/submenu/parfumes/parfumes.c
 import {SubmenuProduct} from "./components/header/submenu/item/submenu.product";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {ReactiveFormsModule} from "@angular/forms";
+import {BlankComponent} from "./components/header/blank.component";
+import {MatMenuModule} from "@angular/material/menu";
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 @NgModule({
   declarations: [
@@ -20,16 +23,19 @@ import {ReactiveFormsModule} from "@angular/forms";
     FooterComponent,
     ParfumesComponent,
     SubmenuProduct,
+    BlankComponent,
   ],
-  imports: [
-    CommonModule,
-    MaterialModule,
-    MatSidenavModule,
-    MatInputModule,
-    MatSelectModule,
-    MatAutocompleteModule,
-    ReactiveFormsModule,
-  ],
+    imports: [
+        CommonModule,
+        MaterialModule,
+        MatSidenavModule,
+        MatInputModule,
+        MatSelectModule,
+        MatAutocompleteModule,
+        ReactiveFormsModule,
+        MatMenuModule,
+        MatCheckboxModule,
+    ],
   exports: [
     HeaderComponent,
     FooterComponent,
