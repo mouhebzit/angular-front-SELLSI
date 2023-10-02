@@ -1,0 +1,21 @@
+<mat-card MatCardAppearance='outlined' class="example-card">
+  <mat-card-header class="mat-card-header ">
+    <h4 class="text-label">NOUVEAU</h4>
+    <button mat-icon-button color="warn">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </mat-card-header>
+  <div class="product-image-info-container">
+    <img class="product-image" mat-card-image [src]="product" alt="Photo of a Shiba Inu">
+    <mat-card-content class="product-info">
+      <span class="brand-name"> TOM FORD</span>
+      <span class="brand-info"> Café Rose</span>
+      <span class="product-type"> Eau de Parfum</span>
+      <span class="product-price"> A partir de <strong>92,00€</strong></span>
+      <span class="product-price-details"> 92,00€ / 100ml</span>
+    </mat-card-content>
+  </div>
+  <mat-card-actions class="show-more-button">
+    <button mat-raised-button>Découvrire</button>
+  </mat-card-actions>
+</mat-card>

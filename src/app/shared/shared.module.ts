@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { OverlayModule } from '@angular/cdk/overlay';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 
@@ -16,6 +16,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {BlankComponent} from "./components/header/blank.component";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatCheckboxModule} from "@angular/material/checkbox";
+import {SidebarComponent} from "./components/sidebar/sidebar.component";
+
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     ParfumesComponent,
     SubmenuProduct,
     BlankComponent,
+    SidebarComponent,
   ],
     imports: [
         CommonModule,
@@ -39,6 +42,8 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
   exports: [
     HeaderComponent,
     FooterComponent,
-  ]
+    SidebarComponent,
+  ],
+
 })
 export class SharedModule { }

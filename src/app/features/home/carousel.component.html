@@ -1,0 +1,13 @@
+<div class="carousel-container">
+  <div class="carousel-wrapper" [style.transform]="'translateX(' + offset + ')'" [style.transition]="'transform 0.4s ease-in-out'">
+    <div *ngFor="let slide of slides" class="carousel-slide">
+      <home-product [product] = "slide.image"></home-product>
+    </div>
+  </div>
+</div>
+<button class="control prev" mat-icon-button (click)="previousSlide()">
+  <mat-icon>chevron_left</mat-icon>
+</button>
+<button class="control next" mat-icon-button (click)="nextSlide()">
+  <mat-icon  >chevron_right</mat-icon>
+</button>

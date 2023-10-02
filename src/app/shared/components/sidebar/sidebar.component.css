@@ -1,0 +1,149 @@
+:host {
+  height: 100%;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-tab-group {
+  height: 100%;
+  font-size: 14px;
+}
+
+
+.close-button-container{
+  padding: 16px 26px 1px;
+}
+
+.close-button-container button{
+  float: right;
+}
+
+.wishlist-container {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.account-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.account-container-login {
+  padding-bottom: 64px;
+  padding-top: 64px;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.login-info {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.form-input-container {
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+mat-form-field {
+  width: 100%;
+  background-color: white;
+  font-size: 14px;
+}
+
+:host ::ng-deep .mat-mdc-tab-body-wrapper {
+  height: 100%;
+}
+
+:host ::ng-deep .mat-mdc-text-field-wrapper.mdc-text-field{
+  background-color: white;
+  padding-left: 0;
+}
+
+:host ::ng-deep .mat-mdc-form-field-focus-overlay {
+  opacity: 0!important;
+}
+
+
+.reset-password-container {
+  margin-bottom: 32px;
+}
+
+.log-in-button-container {
+  text-align: center;
+}
+
+.log-in-button-container button {
+  border-radius: 80px;
+  width: 260px;
+  height: 50px ;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+
+.log-in-button-container button:hover {
+  background-color: rgb(56, 56, 56);
+}
+
+.sign-up-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  background-color: #f6f6f6;
+  flex-grow: 1;
+}
+
+.none-account-text {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.sign-up-button-container {
+  text-align: center;
+}
+
+.sign-up-button-container button {
+  border-radius: 80px;
+  width: 260px;
+  height: 50px ;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+
+.sign-up-button-container button:hover {
+  background-color: rgb(56, 56, 56);
+}
+
+.return-shopping-button {
+  border-radius: 80px;
+  width: 260px;
+  height: 50px ;
+  background-color: white;
+  border: 1px solid black;
+  font-weight: bold;
+}
+
+.login-info h2 {
+  font-size: 16px;
+}
+
+.login-info div {
+  font-size: 14px;
+}

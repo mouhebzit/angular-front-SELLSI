@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {SubmenuProduct} from "../item/submenu.product";
 
 export interface ColumnGrid {
@@ -15,7 +15,7 @@ export interface ColumnGrid {
   styleUrls: ['../submenu.components.css'],
 })
 export class ParfumesComponent {
-
+  @Output() closeMenuEvent: EventEmitter<void> = new EventEmitter<void>();
   products = [SubmenuProduct, SubmenuProduct]
   parfumesCat = ['Parfums Femme', 'Parfums Homme', 'Parfums Unisexes','Parfums enfant','Coffret de parfums','Parfums parapharmacie']
   parfumesType = ['Eau de parfum', 'Eau de toilette', 'Body Spray','Parfums boisés','Parfums frais','Parfums rechargeables']
@@ -27,4 +27,10 @@ export class ParfumesComponent {
     {cols: 1, rows: 1, name : 'TOP MARQUES',links: this.topBrands, products:[]},
     {cols: 3, rows: 1, name : 'TOP VENTES',links:[], products:this.products},
   ];
+
+  close(){
+    this.closeMenuEvent.emit()
+    console.log("close")
+  }
+
 }

@@ -1,21 +1,37 @@
-<mat-grid-list cols="6"  rowHeight="500">
-  <mat-grid-tile *ngFor="let column of columns"
-                 [colspan]="column.cols"
-                 [rowspan]="column.rows">
-    <div class="sub-menu-container">
-      <div class="span-title-container" [ngClass]="{'center-title': column.name==='TOP VENTES'}">
-        <span class="span-title">{{column.name}}</span>
-      </div>
-      <nav class="link-grid" [ngClass] = "column.name==='TOP VENTES' ? 'link-flex' : 'link-grid'">
-        <a *ngFor="let link of column.links" href="#">{{ link }}</a>
-        <a *ngFor="let product of column.products" href="#">
-          <submenu-product></submenu-product>
+<div class="grid-container" (mouseleave)="close()">
+  <div class="item item1">
+    <span class="menu-label">CATEGORIES DE PARFUMS</span>
+    <div class="categorie-container">
+      <div class="item-links">
+        <a *ngFor="let tab of parfumesCat">
+          {{tab}}
         </a>
-      </nav>
+      </div>
+      <div class="item-links withpadding">
+        <a *ngFor="let tab of parfumesType">
+          {{tab}}
+        </a>
+      </div>
     </div>
+  </div>
+  <div class="item item2">
+    <span class="menu-label">TOP MARQUES</span>
+    <div class="item-links">
+      <a *ngFor="let tab of topBrands">
+        {{tab}}
+      </a>
+    </div>
+  </div>
+  <div class="item item3">
+    <span class="menu-label">TOP VENTES</span>
+    <div class="item-links-best-seller">
+      <a *ngFor="let product of products" href="#">
+        <submenu-product></submenu-product>
+      </a>
+    </div>
+  </div>
+</div>
 
-  </mat-grid-tile>
-</mat-grid-list>
 
 
 

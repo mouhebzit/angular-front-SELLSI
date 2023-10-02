@@ -1,0 +1,51 @@
+.carousel-container {
+  width: 1500px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carousel-wrapper {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.carousel-slide {
+  flex: 0 0 360px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.control {
+  position: absolute;
+  top: 50%;
+
+}
+
+.control.prev {
+  left: 10%;
+}
+
+.control.next {
+  right: 10%;
+}
+
+
+.mat-icon {
+  transform: scale(3);
+}
+
+
+@media (max-width: 1600px) {
+  .carousel-container {
+    width: 1400px;
+    height: 100%;
+    overflow: hidden;
+  }
+  .carousel-slide {
+    flex: 0 0 300px;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+}

@@ -24,21 +24,19 @@
   height: 45px;
   width: 660px;
   background: #f2f2f2;
-  border: 1px solid #bdbdbd;
-  border-radius: 100px;
+  border: none;
   flex-direction: row;
 }
 
-::ng-deep .mat-mdc-text-field-wrapper.mdc-text-field {
+:host ::ng-deep .mat-mdc-text-field-wrapper.mdc-text-field{
   height: 45px;
-  border-radius: 100px;
   flex-grow: 1;
   flex-shrink: 0;
   align-items: center;
   border: none;
 }
 
-::ng-deep .mdc-line-ripple{
+:host ::ng-deep .mdc-line-ripple{
   display: none;
 }
 
@@ -54,7 +52,7 @@
 
 
 .header-info{
-  background: black;
+  background: #4b4f60;
   font-size: 13px;
   text-align: center;
   justify-content: center;
@@ -79,8 +77,7 @@ span {
 }
 
 .logo {
-  font-family: sans-serif;
-  font-size: 52px;
+  font-size: 34px;
 }
 
 .sublogo {
@@ -89,45 +86,6 @@ span {
   font-size: 15px;
 }
 
-
-::ng-deep .mat-mdc-tab-body-wrapper {
-  display: none!important;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.submenu-on-hover {
-  display: block;
-}
-
-.tab-span {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 15px;
-  margin: 0;
-  color: black;
-  font-weight: normal;
-  background-color: white;
-}
-
-.tab-span-hover{
-  font-weight: bold;
-}
-
-
-::ng-deep .mdc-tab.mat-mdc-tab {
-  padding: 0!important;
-  background-color: white;
-}
-
-::ng-deep .mdc-tab--active.mdc-tab-indicator--active {
-  background-color: white!important;
-}
-
-::ng-deep .mat-mdc-tab .mdc-tab__content {
-  background-color: white!important;
-}
 
 .mat-icon-color {
   background-color: #3F51B5;
@@ -144,9 +102,97 @@ span {
   padding-right: 10px;
 }
 
+.login-container span{
+ font-size: 14px;
+}
+
+.first-level-menu {
+  display: flex;
+  gap: 14px;
+  justify-items: center;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.first-level-menu span{
+  font-size: 14px;
+  color: #363636;
+}
+
 .logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  background-color: white;
+  padding: 0 1rem;
+}
+
+.header-name{
+  font-size: 13px;
+}
+
+.header-name:hover {
+  font-weight: bold;
+}
+
+.header-name-focused{
+  font-weight: bold;
+}
+
+.tab-label {
+  position: relative;
+  margin: 0px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 15px;
+}
+
+.tab-label:first-child{
+  margin-left: 0;
+}
+
+.tab-label:hover {
+  font-weight: bold;
+}
+
+.tab-label-activated {
+  font-weight: bold;
+}
+
+.submenu-container {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 140px;
+  height: 1100px;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 1;
+  display: none;
+}
+
+.submenu-container-shown {
+  display: block;
+}
+
+
+.header-menu-container {
+  display: flex;
+  background-color: white;
+}
+
+.header-item-group {
+  list-style-type: none;
+  display: flex;
+}
+
+.login-container a {
+  cursor: pointer;
 }

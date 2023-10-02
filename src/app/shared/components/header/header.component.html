@@ -1,12 +1,16 @@
-<mat-toolbar>
+<mat-toolbar >
   <mat-toolbar-row class="header-info">
     <span>Inscrivez-vous à la newsletter SELLSI, accédez en avant première aux bons plans & nouveautés ! </span>
   </mat-toolbar-row>
 
   <mat-toolbar-row class="center-row">
     <div class="logo-container">
-      <span class="logo">S&#x039E;LLSI</span>
-      <span class="sublogo">à ne pas rater</span>
+      <span class="logo">Sellsi</span>
+    </div>
+    <div class="first-level-menu">
+      <span>Femme</span>
+      <span>Homme</span>
+      <span>Enfants</span>
     </div>
     <span class="example-spacer"></span>
     <div class="search-form-container">
@@ -18,27 +22,25 @@
     </div>
     <span class="example-spacer"></span>
     <div class="login-container">
-      <button mat-icon-button> <img src="assets/user.png"> </button>
-      <span>Se connecter</span>
+      <button (click)="onButtonClick()" mat-icon-button> <img src="assets/user.png"> </button>
+      <a (click)="onButtonClick()">Se connecter / S'inscrire</a>
     </div>
-    <button mat-icon-button><img src="assets/favorite.png"></button>
-    <button mat-icon-button><img src="assets/cart.png"></button>
+    <button (click)="onButtonClick()" mat-icon-button><img src="assets/favorite.png"></button>
+    <button (click)="onButtonClick()" mat-icon-button><img src="assets/cart.png"></button>
   </mat-toolbar-row>
 </mat-toolbar>
 
-<mat-tab-group [selectedIndex]="activeTab" (focusChange)="onTabFocus($event)" (selectedTabChange)="onTabChange($event)" animationDuration="0ms" mat-stretch-tabs="false" mat-align-tabs="center" dynamicHeight>
-  <mat-tab *ngFor="let tab of tabs; let i = index">
-    <ng-template mat-tab-label >
-      <h5 class="tab-span"
-          (mouseover)="onTabHover(i)"
-          [ngClass]="{'tab-span-hover': i === hoveredTabIndex}"
-      >{{ tab }}</h5>
-    </ng-template>
-    <ng-template matTabContent>
-      <div [ngClass]="{'submenu-on-hover': hoveredTabIndex === i}">
-        <parfumes-menu></parfumes-menu>
-      </div>
-    </ng-template>
-  </mat-tab>
-</mat-tab-group>
+
+<div class="header-menu-container" (mouseleave)="closeMenu()">
+  <ng-container *ngFor="let tab of tabs; let i = index">
+    <ul class="header-container" (mouseenter)="openMenu(i)">
+      <li class="header-item-group" >
+        <span class="header-name" [class.header-name-focused]="ishovered[i]"><a>{{tab}}</a></span>
+        <div class="submenu-container" [class.submenu-container-shown]="ishovered[i]">
+          <parfumes-menu (closeMenuEvent)="closeMenu()" ></parfumes-menu>
+        </div>
+      </li>
+    </ul>
+  </ng-container>
+</div>
 

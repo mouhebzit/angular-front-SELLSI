@@ -1,0 +1,69 @@
+<div class="main-container">
+  <div class="close-button-container">
+    <button (click)="onButtonClick()" mat-icon-button>
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <mat-tab-group selectedIndex="1">
+    <mat-tab label="FAVORIS">
+      <ng-template matTabContent>
+        <div class="wishlist-container">
+          <h6>Votre liste de favoris est vide</h6>
+        </div>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="COMPTE">
+      <ng-template matTabContent>
+        <div class="account-container">
+          <div class="account-container-login">
+            <div class="login-info">
+              <h2>S'IDENTIFIER</h2>
+              <div>Pour accéder à votre compte</div>
+            </div>
+            <div class="form-container">
+              <div class="form-input-container">
+                <mat-form-field>
+                  <mat-label>Enter your email</mat-label>
+                  <input matInput placeholder="pat@example.com" [formControl]="email" required>
+                  <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+              </div>
+              <div class="form-input-container">
+                <mat-form-field>
+                  <mat-label>Enter your password</mat-label>
+                  <input matInput [type]="hide ? 'password' : 'text'">
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+              </div>
+              <div class="reset-password-container">
+                <div>Mot de passe oublié ?</div>
+              </div>
+              <div class="log-in-button-container">
+                <button mat-button>s'identifier</button>
+              </div>
+
+            </div>
+          </div>
+          <div class="sign-up-container">
+            <div class="none-account-text">PAS DE COMPTE ?</div>
+            <div class="sign-up-button-container">
+              <button mat-button>Créer un compte</button>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="PANIER">
+      <ng-template matTabContent>
+        <div class="cart-container">
+          <h6>Vous n'avez pas de produit dans votre panier</h6>
+          <button class="return-shopping-button" mat-button>Retour à la boutique</button>
+        </div>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+

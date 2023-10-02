@@ -1,3 +1,9 @@
-<header-section></header-section>
-<router-outlet></router-outlet>
-<footer-section></footer-section>
+<mat-drawer-container class="main-app-container" [hasBackdrop]="true" scrol>
+  <mat-drawer #drawer class="sidebar-container" mode="over" position="end">
+    <right-side-bar (toggleDrawerEvent)="toggleDrawer()" ></right-side-bar>
+  </mat-drawer>
+  <header-section (toggleDrawerEvent)="toggleDrawer()"></header-section>
+  <router-outlet></router-outlet>
+  <footer-section></footer-section>
+</mat-drawer-container>
+

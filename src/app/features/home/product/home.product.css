@@ -1,9 +1,14 @@
 .example-card {
-  max-width: 230px;
-  max-height: 430px;
+  max-width: 320px;
+  max-height: 485px;
   box-shadow: none;
   padding: 10px;
   margin: 2px;
+}
+
+.product-image {
+  width: 240px;
+  height: 240px;
 }
 
 .example-card:hover {
@@ -25,6 +30,13 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.product-image-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
 }
 
 .brand-name {

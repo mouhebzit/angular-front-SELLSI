@@ -1,54 +1,60 @@
-.mat-grid-list {
-  margin-left: 200px;
-  margin-top: 30px;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  padding-left: 16px;
+  background-color: white;
+  height: 500px;
 }
 
-.sub-menu-container {
+.item1 {
+  grid-column: span 2;
+}
+
+.item2 {
+  grid-column: span 1;
+}
+
+.item3 {
+  grid-column: span 3;
+}
+
+.item-links-first {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.item-links{
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 0;
+  margin-top: 15px;
+  gap: 4px;
 }
 
-.mat-grid-tile-header {
-  justify-content: start;
-  background-color: white;
-  color: black;
+.withpadding{
+  padding-left: 50px;
 }
 
-.span-title {
-  height: 10px;
-}
-.span-title-container {
+.item-links-best-seller {
   display: flex;
-  position: relative;
-  height: 20px;
-  margin-bottom: 10px;
-}
-.center-title {
-  justify-content: center;
+  flex-direction: row;
+  margin-top: 15px;
+  gap: 4px;
 }
 
-.link-grid {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  justify-content: start;
-  align-items: start;
-  left: 0;
-  margin: 0;
-}
-
-.link-flex{
-  position: relative;
+.categorie-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
+  flex-direction: row;
 }
 
-.link-grid a {
+.menu-label {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+a{
   text-decoration: none;
-  color: inherit;
-  display: inline-block;
+  color: black;
+  font-size: 13px;
 }
