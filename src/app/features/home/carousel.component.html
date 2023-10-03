@@ -5,9 +5,9 @@
     </div>
   </div>
 </div>
-<button class="control prev" mat-icon-button (click)="previousSlide()">
+<button class="control prev" mat-icon-button (click)="previousSlide()" [disabled]='disabled_left'>
   <mat-icon>chevron_left</mat-icon>
 </button>
-<button class="control next" mat-icon-button (click)="nextSlide()">
-  <mat-icon  >chevron_right</mat-icon>
+<button class="control next" mat-icon-button (click)="nextSlide()" [disabled]='disabled_right'>
+  <mat-icon>chevron_right</mat-icon>
 </button>

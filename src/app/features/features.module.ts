@@ -8,6 +8,7 @@ import {HomeProduct} from "./home/product/home.product";
 import {MatCardModule} from "@angular/material/card";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import {MatButtonModule} from "@angular/material/button";
     HomeComponent,
     CarouselComponent,
     HomeProduct,
+    ProductDetailComponent,
 
   ],
   imports: [
