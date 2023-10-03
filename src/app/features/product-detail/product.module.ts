@@ -3,9 +3,16 @@ import { ProductDetailComponent } from './product-detail.component';
 import { productDetailRouting } from './product.routing';
 
 
+// Import the library
+import { NgxImageZoomModule } from 'ngx-image-zoom';
+
+
 @NgModule({
   imports: [
-    productDetailRouting
+    NgxImageZoomModule,
+    NgxImageZoomModule,
+    productDetailRouting,
+
   ],
   declarations: [
     ProductDetailComponent

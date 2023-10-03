@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent {
+  name = 'Angular';
+
+  myThumbnail = "../../../assets/product5.png";
+
+  myFullresImage="../../../assets/product5.png";
 
 }
