@@ -5,6 +5,10 @@ import {HomeComponent} from "./features/home/home.component";
 
 const routes: Routes = [
   {
+    path:'product/:id', 
+    loadChildren: () => import('./features/product-detail/product.module').then(m => m.ProductModule)
+  },
+  {
     path: 'signup',
     loadChildren: () => import('./features/signup/signup.module').then(m => m.SignupModule)
   },
@@ -14,6 +18,9 @@ const routes: Routes = [
   },
   {
     path:'', component: HomeComponent
+  },
+  {
+    path: '**' , redirectTo: '' , pathMatch: 'full'
   }
 ];
 
