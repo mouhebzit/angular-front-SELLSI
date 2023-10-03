@@ -16,8 +16,6 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     HomeComponent,
     CarouselComponent,
     HomeProduct,
-    ProductDetailComponent,
-
   ],
   imports: [
     NgForOf,

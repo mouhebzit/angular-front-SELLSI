@@ -5,11 +5,18 @@ import {SignupModule} from "./features/signup/signup.module";
 
 const routes: Routes = [
   {
+    path:'product/:id', 
+    loadChildren: () => import('./features/product-detail/product.module').then(m => m.ProductModule)
+  },
+  {
     path: 'signup',
     loadChildren: () => import('./features/signup/signup.module').then(m => SignupModule)
   },
   {
     path:'', component: HomeComponent
+  },
+  {
+    path: '**' , redirectTo: '' , pathMatch: 'full'
   }
 ];
 
