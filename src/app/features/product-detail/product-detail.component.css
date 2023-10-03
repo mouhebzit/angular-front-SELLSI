@@ -1,0 +1,8 @@
+:host ::ng-deep .ngxImageZoomThumbnail{
+    width:300px!important;
+}    
+
+:host ::ng-deep .ngxImageZoomContainer{
+    width:300px!important;
+}
+
