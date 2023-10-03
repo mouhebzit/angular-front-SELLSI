@@ -49,7 +49,9 @@
           <div class="sign-up-container">
             <div class="none-account-text">PAS DE COMPTE ?</div>
             <div class="sign-up-button-container">
-              <button mat-button>Créer un compte</button>
+              <a (click)="onButtonClick()" routerLink="/signup">
+                <button mat-button>Créer un compte</button>
+              </a>
             </div>
           </div>
         </div>

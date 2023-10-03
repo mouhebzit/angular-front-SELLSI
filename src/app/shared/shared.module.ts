@@ -17,6 +17,7 @@ import {BlankComponent} from "./components/header/blank.component";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {SidebarComponent} from "./components/sidebar/sidebar.component";
+import {RouterLink} from "@angular/router";
 
 
 @NgModule({
@@ -28,17 +29,18 @@ import {SidebarComponent} from "./components/sidebar/sidebar.component";
     BlankComponent,
     SidebarComponent,
   ],
-    imports: [
-        CommonModule,
-        MaterialModule,
-        MatSidenavModule,
-        MatInputModule,
-        MatSelectModule,
-        MatAutocompleteModule,
-        ReactiveFormsModule,
-        MatMenuModule,
-        MatCheckboxModule,
-    ],
+  imports: [
+    CommonModule,
+    MaterialModule,
+    MatSidenavModule,
+    MatInputModule,
+    MatSelectModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    MatMenuModule,
+    MatCheckboxModule,
+    RouterLink,
+  ],
   exports: [
     HeaderComponent,
     FooterComponent,
