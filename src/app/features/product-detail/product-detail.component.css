@@ -1,8 +1,228 @@
+/* Global container */
+:host ::ng-deep .global-container{
+    background-color:white!important;
+    width:100%;
+    height:100%;
+}
+
 :host ::ng-deep .ngxImageZoomThumbnail{
-    width:300px!important;
+    width:350px!important;
 }    
 
 :host ::ng-deep .ngxImageZoomContainer{
-    width:300px!important;
+    width:350px!important;
 }
 
+/* Product container */
+
+.product-container{
+    padding-right:150px;
+    display: inline-block;
+    position:absolute;
+    top:0px;
+}
+
+
+/* Product header */
+
+.product-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.favorite{
+    cursor: pointer;
+    margin-right:20px;
+}
+
+.favorite:hover{
+    background-color:#E2E2E2;
+    border-radius:10px;
+}
+
+.new{ 
+    display: flex;
+    min-width:10%;
+    font-size:.675rem;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    align-items: center;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+/* Brand */
+
+.brand {
+    text-decoration: underline;
+    color:black;
+}
+
+.brand:hover{
+    color:black;
+}
+
+/* Name */
+
+.name{
+    font-size:.9375rem;
+    font-weight: bold;
+}
+
+
+/* Star container */
+
+.star-container{
+    cursor:pointer;
+    overflow: hidden;
+}
+
+mat-icon{
+    width:25px;
+}
+
+.star-wrapper{
+    width:125px;
+    cursor: pointer;
+}
+
+/* Description */
+
+.description{
+    display: flex;
+    max-width:40%;
+    font-size:15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.more-info {
+    text-decoration: underline;
+    color:black;
+}
+
+.more-info:hover{
+    color:black;
+}
+
+/* Price */
+
+.price{
+    font-weight: bold;
+}
+
+.ratio{
+    color:rgb(128, 128, 128);
+    font-size:11px;
+}
+
+/* Buttons */
+
+:host ::ng-deep .mat-button-toggle-button{
+    border:1px solid #E2E2E2;
+    font-size:10px;
+}
+
+:host ::ng-deep .mat-button-toggle{
+    border:none!important;
+}
+
+:host ::ng-deep .mat-button-toggle-group{
+    border: none;
+}
+
+.right-button{
+    margin-left:20px!important;
+    border-left:none;
+
+}
+
+:host ::ng-deep .mat-button-toggle-label-content{
+    line-height:4ch!important;
+}
+
+.unit{
+    font-weight: bold;
+    font-size:13px;
+}
+
+:host ::ng-deep .mat-button-toggle .left-button .mat-button-toggle-appearance-standard .mat-button-toggle-checked{
+    background-color:red;
+}
+
+.unit-price{
+    color: rgb(126, 126, 126);
+}
+
+
+/* Card */
+
+.card{
+    display: flex;
+    justify-content: center;
+}
+.card-button{
+    width:300px;
+    height:35px;
+    background-color:black;
+    color:white;
+    font-weight: bold;
+    cursor:pointer;
+    border-radius:5px;
+    border:none;
+    padding-right:50px;
+    padding-left:50px;
+    font-size: 12px;
+    background-image: linear-gradient(to top, #E2E2E2 100%, #000 0%);
+    background-repeat: no-repeat;
+    background-size: 100% 0;
+    transition: background-size 0.3s ease;
+}
+
+.card-button:hover{
+    background-color: #bdbdbd;
+    color:black;
+    background-size: 100% 100%;
+
+}
+
+/* Spacer */
+
+.spacer{
+    margin-bottom:10px;
+}
+
+.spacer-20{
+    margin-bottom:20px;
+}
+
+.spacer-40{
+    margin-bottom:40px;
+}
+
+/* Product detail */
+
+:host ::ng-deep .mat-grid-tile-content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin-right:70px;
+}
+
+/* Carousel */
+
+li{
+   list-style: none;
+}
+
+.vignette-image{
+    width:60px;
+    height:60px;
+}
+
+.carousel{
+    margin-right:40px;
+}
