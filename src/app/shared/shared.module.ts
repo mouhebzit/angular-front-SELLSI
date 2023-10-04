@@ -18,6 +18,7 @@ import {MatMenuModule} from "@angular/material/menu";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {SidebarComponent} from "./components/sidebar/sidebar.component";
 import {RouterLink} from "@angular/router";
+import { StarRatingComponent } from './components/star-rating/star-rating.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import {RouterLink} from "@angular/router";
     SubmenuProduct,
     BlankComponent,
     SidebarComponent,
+    StarRatingComponent,
   ],
   imports: [
     CommonModule,

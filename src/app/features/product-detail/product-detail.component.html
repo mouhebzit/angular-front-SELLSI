@@ -1,10 +1,115 @@
-<lib-ngx-image-zoom
-    [thumbImage]=myThumbnail
-    [magnification]="2"
-    [enableScrollZoom]="true"
-    [enableLens]="true"
-    [lensWidth]="70"
-    [lensHeight]="70"
-></lib-ngx-image-zoom>
+<div class="global-container">
+    <div style="padding-top:40px"></div>
+
+    <mat-grid-list cols="2" rowHeight="2:2">
+        <mat-grid-tile [style.background-color]="tiles[0].color">
+            <div class="carousel">
+                <ul>
+                    <li class="vignette">
+                        <img class="vignette-image" src="../../../assets/boss.avif">
+                    </li>
+                    <li class="vignette">
+                        <img class="vignette-image" src="../../../assets/boss2.avif">
+                    </li>
+                    <li class="vignette">
+                        <img class="vignette-image" src="../../../assets/boss3.avif">
+                    </li>
+                    <li class="vignette">
+                        <img class="vignette-image" src="../../../assets/boss4.avif">
+                    </li>
+                    <li class="vignette">
+                        <img class="vignette-image" src="../../../assets/boss5.avif">
+                    </li>
 
 
+                </ul>
+            </div>
+
+            <div class="show-product">
+                <lib-ngx-image-zoom
+                [thumbImage]=myThumbnail
+                [magnification]="1"
+                [enableScrollZoom]="true"
+                [enableLens]="true"
+                [lensWidth]="80"
+                [lensHeight]="80">
+                </lib-ngx-image-zoom>
+            </div>
+      </mat-grid-tile>
+    
+      <mat-grid-tile [style.background-color]="tiles[1].color">
+        <div class="product-container">
+            <div class="product-header">
+                <div *ngIf="produit.new" class="new">NOUVEAU</div>
+                <mat-icon class="favorite">favorite_border</mat-icon>
+            </div>
+    
+            <div class="spacer"></div>
+    
+            <a href="/product/{{produit.id}}" class="brand">{{ produit.brand}}</a>
+    
+            <div class="spacer"></div>
+    
+            <h1 class="name">{{ produit.name }}</h1>
+    
+            <div class="spacer"></div>
+    
+            <div class="star-container" [style.width.px]="starWidth">
+                <div class="star-wrapper">
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                </div>
+            </div> 
+    
+            <div class="spacer"></div>
+    
+            <div class="description">
+                {{produit.description}}
+            </div>
+        
+            <div class="spacer"></div>
+    
+            <a href="#" class="more-info">En savoir plus</a>
+    
+            <div class="spacer-20"></div>
+    
+            <div>
+                <div class="price">
+                    {{produit.price[0] | currency: 'EUR': 'symbol': '1.2-2': 'fr'}}
+                </div>
+                <div class="ratio">
+                    <div *ngIf="produit.unit[0] == 50; else elseBlock">{{ produit.price[0] * 2 | currency: 'EUR': 'symbol': '1.2-2': 'fr'}} / 100ml</div>
+                    <ng-template #elseBlock>{{ produit.price[1] | currency: 'EUR': 'symbol': '1.2-2': 'fr'}} / 100ml</ng-template>
+                </div>
+            </div>
+    
+            <div class="spacer-20"></div>
+            
+            <mat-button-toggle-group>
+                <mat-button-toggle class="left-button">
+                    <div class="unit">{{ produit.unit[0] }} ml</div>
+                    <div class="unit-price">{{ produit.price[0] * 2 | currency: 'EUR': 'symbol': '1.2-2': 'fr'}} / 100ml</div>
+                </mat-button-toggle>
+    
+                <mat-button-toggle class="right-button">
+                    <div class="unit">{{ produit.unit[1] }} ml</div>
+                    <div class="unit-price">{{ produit.price[1] | currency: 'EUR': 'symbol': '1.2-2': 'fr'}} / 100ml</div>
+                </mat-button-toggle>
+            </mat-button-toggle-group>
+    
+            <div class="spacer-40"></div>
+    
+           
+            <div class="card">
+                <button class="card-button">Ajouter au Panier</button>
+            </div>
+        </div>
+        
+    
+    
+      </mat-grid-tile>
+    </mat-grid-list>
+</div>
