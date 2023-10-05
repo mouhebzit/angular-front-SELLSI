@@ -10,6 +10,10 @@ import { registerLocaleData } from '@angular/common';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
 import localeFr from '@angular/common/locales/fr';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
+import {MatTabsModule} from '@angular/material/tabs';
+import { FeaturesModule } from '../features.module';
 
 
 registerLocaleData(localeFr, 'fr');
@@ -25,7 +29,11 @@ registerLocaleData(localeFr, 'fr');
     MatGridListModule,
     CommonModule,
     MatIconModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatDividerModule,
+    MatButtonModule,
+    MatTabsModule,
+    FeaturesModule
   ],
   declarations: [
     ProductDetailComponent

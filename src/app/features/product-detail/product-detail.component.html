@@ -1,115 +1,192 @@
 <div class="global-container">
-    <div style="padding-top:40px"></div>
+    
 
-    <mat-grid-list cols="2" rowHeight="2:2">
-        <mat-grid-tile [style.background-color]="tiles[0].color">
-            <div class="carousel">
-                <ul>
-                    <li class="vignette">
-                        <img class="vignette-image" src="../../../assets/boss.avif">
-                    </li>
-                    <li class="vignette">
-                        <img class="vignette-image" src="../../../assets/boss2.avif">
-                    </li>
-                    <li class="vignette">
-                        <img class="vignette-image" src="../../../assets/boss3.avif">
-                    </li>
-                    <li class="vignette">
-                        <img class="vignette-image" src="../../../assets/boss4.avif">
-                    </li>
-                    <li class="vignette">
-                        <img class="vignette-image" src="../../../assets/boss5.avif">
-                    </li>
+    <div class="breadcrumb pdp-breadcrumb">
+        <div class="breadcrumb-element">
+            <a href="" titre="Sephora">Sephora/ </a>
+        </div>
 
+        <div class="breadcrumb-element">
+            <a href="" titre="Parfum">Parfum/ </a>
+        </div>
 
-                </ul>
-            </div>
+        <div class="breadcrumb-element">
+            <a href="" titre="Parfum homme">Parfum homme/ </a>
+        </div>
 
-            <div class="show-product">
-                <lib-ngx-image-zoom
-                [thumbImage]=myThumbnail
-                [magnification]="1"
-                [enableScrollZoom]="true"
-                [enableLens]="true"
-                [lensWidth]="80"
-                [lensHeight]="80">
-                </lib-ngx-image-zoom>
-            </div>
-      </mat-grid-tile>
-    
-      <mat-grid-tile [style.background-color]="tiles[1].color">
-        <div class="product-container">
-            <div class="product-header">
-                <div *ngIf="produit.new" class="new">NOUVEAU</div>
-                <mat-icon class="favorite">favorite_border</mat-icon>
-            </div>
-    
-            <div class="spacer"></div>
-    
-            <a href="/product/{{produit.id}}" class="brand">{{ produit.brand}}</a>
-    
-            <div class="spacer"></div>
-    
-            <h1 class="name">{{ produit.name }}</h1>
-    
-            <div class="spacer"></div>
-    
-            <div class="star-container" [style.width.px]="starWidth">
-                <div class="star-wrapper">
-                    <mat-icon>star</mat-icon>
-                    <mat-icon>star</mat-icon>
-                    <mat-icon>star</mat-icon>
-                    <mat-icon>star</mat-icon>
-                    <mat-icon>star</mat-icon>
-                </div>
-            </div> 
-    
-            <div class="spacer"></div>
-    
-            <div class="description">
-                {{produit.description}}
-            </div>
-        
-            <div class="spacer"></div>
-    
-            <a href="#" class="more-info">En savoir plus</a>
-    
-            <div class="spacer-20"></div>
-    
-            <div>
-                <div class="price">
-                    {{produit.price[0] | currency: 'EUR': 'symbol': '1.2-2': 'fr'}}
-                </div>
-                <div class="ratio">
-                    <div *ngIf="produit.unit[0] == 50; else elseBlock">{{ produit.price[0] * 2 | currency: 'EUR': 'symbol': '1.2-2': 'fr'}} / 100ml</div>
-                    <ng-template #elseBlock>{{ produit.price[1] | currency: 'EUR': 'symbol': '1.2-2': 'fr'}} / 100ml</ng-template>
-                </div>
-            </div>
-    
-            <div class="spacer-20"></div>
-            
-            <mat-button-toggle-group>
-                <mat-button-toggle class="left-button">
-                    <div class="unit">{{ produit.unit[0] }} ml</div>
-                    <div class="unit-price">{{ produit.price[0] * 2 | currency: 'EUR': 'symbol': '1.2-2': 'fr'}} / 100ml</div>
-                </mat-button-toggle>
-    
-                <mat-button-toggle class="right-button">
-                    <div class="unit">{{ produit.unit[1] }} ml</div>
-                    <div class="unit-price">{{ produit.price[1] | currency: 'EUR': 'symbol': '1.2-2': 'fr'}} / 100ml</div>
-                </mat-button-toggle>
-            </mat-button-toggle-group>
-    
-            <div class="spacer-40"></div>
-    
-           
-            <div class="card">
-                <button class="card-button">Ajouter au Panier</button>
-            </div>
+        <div class="breadcrumb-element">
+            <a href="" titre="Parfum" class="current">Parfum</a>
         </div>
         
-    
-    
-      </mat-grid-tile>
+    </div>
+
+
+
+    <mat-grid-list cols="2" rowHeight="2:1.4">
+        <mat-grid-tile [style.background-color]="tiles[0].color">
+            <div class="carousel-container">
+                <div class="carousel-button">
+                    <button mat-mini-fab color="slide-button" class="up" (click)="translateUp(80)">
+                      <mat-icon>keyboard_arrow_up</mat-icon>
+                    </button>
+                </div>
+                <div class="carousel">  
+                    <ul [style.transform]="'translateY('+ translate + 'px)'">
+                        <li *ngFor="let image of images" class="vignette">
+                            <img [src]="image.url" (click)="onClicked(image.id)" class="vignette-image" [style.border]="clickedImage == image.id ? '2px solid black' : ''"
+                            [style.border-radius]="clickedImage == image.id ? '5px' : ''"
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="carousel-button">
+                    <button mat-mini-fab color="slide-button" class="down" (click)="translateDown(-80)">
+                      <mat-icon>keyboard_arrow_down</mat-icon>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div *ngIf="showImageZoomComponent">
+                <div class="show-product">
+                    <lib-ngx-image-zoom 
+                        [thumbImage]=myThumbnail 
+                        [magnification]="1" 
+                        [enableScrollZoom]="true"
+                        [enableLens]="true" 
+                        [lensWidth]="80" 
+                        [lensHeight]="80">
+                    </lib-ngx-image-zoom>
+                </div>
+            </div>
+            
+        </mat-grid-tile>
+
+        <mat-grid-tile [style.background-color]="tiles[1].color">
+            <div class="product-container">
+                <div class="product-header">
+                    <div *ngIf="produit.new" class="new">NOUVEAU</div>
+
+                    <button mat-icon-button [color]="favoriteClass" class="favorite" (click)="toggleFavorite()">
+                        <mat-icon>favorite</mat-icon>
+                    </button>
+
+                </div>
+
+
+                <a href="/product/{{produit.id}}" class="brand">{{ produit.brand}}</a>
+
+                <div class="spacer"></div>
+
+                <h1 class="name">{{ produit.name }}</h1>
+
+                <div class="spacer"></div>
+
+                <div class="star-container" [style.width.px]="starWidth">
+                    <div class="star-wrapper">
+                        <mat-icon>star</mat-icon>
+                        <mat-icon>star</mat-icon>
+                        <mat-icon>star</mat-icon>
+                        <mat-icon>star</mat-icon>
+                        <mat-icon>star</mat-icon>
+                    </div>
+                </div>
+
+                <div class="spacer"></div>
+
+                <div class="description">
+                    {{produit.description}}
+                </div>
+
+                <div class="spacer"></div>
+
+                <a href="#" class="more-info">En savoir plus</a>
+
+                <div class="spacer-20"></div>
+
+                <div>
+                    <div class="price">
+                        {{produit.price[currentPrice] | currency: 'EUR': 'symbol': '1.2-2': 'fr'}}
+                    </div>
+                    <div class="ratio">
+                        <div *ngIf="produit.unit[currentPrice] == 50; else elseBlock">{{ produit.price[currentPrice] * 2 | currency: 'EUR':
+                            'symbol': '1.2-2': 'fr'}} / 100ml</div>
+                        <ng-template #elseBlock>{{ produit.price[currentPrice] | currency: 'EUR': 'symbol': '1.2-2': 'fr'}} /
+                            100ml</ng-template>
+                    </div>
+                </div>
+
+                <div class="spacer-20"></div>
+
+                <mat-button-toggle-group>
+                    <mat-button-toggle class="left-button" (click)="console(0)">
+                        <div class="unit">{{ produit.unit[0] }} ml</div>
+                        <div class="unit-price">{{ produit.price[0] * 2 | currency: 'EUR': 'symbol': '1.2-2': 'fr'}} /
+                            100ml</div>
+                    </mat-button-toggle>
+
+                    <mat-button-toggle class="right-button" (click)="console(1)">
+                        <div class="unit">{{ produit.unit[1] }} ml</div>
+                        <div class="unit-price">{{ produit.price[1] | currency: 'EUR': 'symbol': '1.2-2': 'fr'}} / 100ml
+                        </div>
+                    </mat-button-toggle>
+                </mat-button-toggle-group>
+
+                <div class="spacer-40"></div>
+
+
+                <div class="card">
+                    <button class="card-button">Ajouter au Panier</button>
+                </div>
+            </div>
+
+
+
+        </mat-grid-tile>
     </mat-grid-list>
+    
+
+    <div class="bottom-page">
+        <mat-tab-group class="test" animationDuration="0ms">
+            <mat-tab label="Description">
+                <p class="bottomText">
+                        L'Elixir de Parfum BOSS Bottled, le plus concentré des parfums de la gamme, est ambré et boisé, il incarne la confiance grâce à une fusion enivrante d'ingrédients riches. Vétiver et patchouli s'entrelacent pour laisser un sillage mémorable et séduisant réchauffé par des notes d'encens et de cardamome. Les notes de fond du bois de cèdre se mêlent aux nuances ambrées du labdanum, conférant au parfum un caractère boisé et masculin.
+
+                        <br/><br/>Arborant un fini laqué noir fascinant qui encadre une lueur dorée intense au centre, le flacon est orné d'un élégant capuchon doré et évoque l'essence sophistiquée de l'homme BOSS.
+
+                        <br/><br/>Composé par le célèbre parfumeur Annick Menardo, créatrice de la signature BOSS Bottled, en collaboration avec le parfumeur Suzy Le Helley, l'Elixir est une réinterprétation audacieuse d'un parfum emblématique.
+                        L'Elixir BOSS Bottled est une eau de parfum pour homme qui attirera les compliments à chaque fois que vous le porterez.
+                </p>
+            </mat-tab>
+
+            <mat-tab label="Utilisation">
+                <p class="bottomText">
+                    Parfait pour toute occasion, le parfum de l'Elixir BOSS Bottled s'intensifie avec votre chaleur corporelle.|Vaporisez ce parfum aux creux de vos genoux et de vos coudes pour une senteur intense et longue durée.|Associez-le au gel douche BOSS Bottled et au spray déodorant BOSS Bottled pour un parfum plus intense.
+                </p>
+            </mat-tab>
+            <mat-tab label="Ingredients">
+                <p class="bottomText">ALCOHOL DENAT. • PARFUM/FRAGRANCE • AQUA/WATER/EAU • ETHYLHEXYL SALICYLATE • COUMARIN • LIMONENE • CITRONELLOL • LINALOOL • ALCOHOL • TRIS(TETRAMETHYLHYDROXYPIPERIDINOL) CITRATE • EUGENOL • GERANIOL YELLOW 6 (CI 15985) • YELLOW 5 (CI 19140) • BLUE 1 (CI 42090).
+
+                    <br/><br/>Cette liste d'ingrédients peut faire l'objet de modifications, veuillez consulter l'emballage du produit acheté.</p>
+            </mat-tab>
+            <mat-tab label="Avis">
+                <ng-template mat-tab-label>
+                    <mat-icon class="example-tab-icon">star</mat-icon>
+                    Avis
+                </ng-template>
+              Content 4</mat-tab>
+        </mat-tab-group>
+    
+    </div>
+
+
+    
+    <div class="other-products">
+        <h2 class="for-you"> {{"complétez votre look" | uppercase}}</h2>
+        <div class="caroursel-products">
+            <app-carousel></app-carousel>
+
+        </div>
+    </div>
+
 </div>

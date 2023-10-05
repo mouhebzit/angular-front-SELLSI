@@ -28,6 +28,7 @@
 .product-header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .favorite{
@@ -35,12 +36,15 @@
     margin-right:20px;
 }
 
-.favorite:hover{
-    background-color:#E2E2E2;
-    border-radius:10px;
+.mat-fav{
+    color: black;
 }
 
+.mat-unfav{
+    color:#8a8a8a;
+}
 .new{ 
+    height:25px;
     display: flex;
     min-width:10%;
     font-size:.675rem;
@@ -162,7 +166,7 @@ mat-icon{
 
 .card{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 .card-button{
     width:300px;
@@ -214,15 +218,143 @@ mat-icon{
 
 /* Carousel */
 
+ul{
+    height:280px;
+    transition: transform 0.7s ease 0s;
+}
 li{
    list-style: none;
+   margin-bottom:10px;
 }
 
 .vignette-image{
     width:60px;
     height:60px;
+    cursor:pointer;
 }
 
 .carousel{
     margin-right:40px;
+    overflow: hidden;
+
 }
+
+.carousel-button{
+    display:flex;
+    justify-content: flex-end;
+}
+
+.carousel-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mat-slide-button {
+    background-color: white;
+    color: black;
+}
+
+.up{
+    width:30px;
+    height:30px;
+}
+
+.down{
+    width:30px;
+    height:30px;
+}
+
+
+.breadcrumb{
+    color: #979797;
+    cursor:pointer;
+    margin-left:200px;
+    margin-bottom:20px;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    box-sizing: inherit;
+    font-size: 0.825rem;
+    line-height: 1.39;
+    letter-spacing: .5px;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+.breadcrumb div{
+    margin-left:5px;
+}
+
+.breadcrumb a{
+    color: #979797;
+    font-size:0.9em;
+}
+
+.breadcrumb a:hover{
+    color:black;
+}
+
+.current{
+    color:black!important;
+    font-weight:bolder!important;
+}
+
+/* Bottom Page */
+
+.test{
+    width:400px;
+    font-size:10px;
+    padding:0px!important;
+}
+
+:host ::ng-deep .mdc-tab .mat-mdc-tab .mat-mdc-focus-indicator .mdc-tab--active .ng-star-inserted .mdc-tab-indicator{
+    padding:0px!important;
+}
+
+.bottom-page{
+    display:flex;
+    justify-content: center;
+}
+
+:host ::ng-deep .bottomText{
+    display: flex;
+    align-items: center;
+    width:1000px;
+    max-width:100%!important;
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 10 0 1.5em;
+}
+
+:host ::ng-deep mat-tab-group{
+    display: flex;
+    align-items: center;
+}
+
+
+/* Other products */
+
+.other-products{    
+    max-width:100%;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.for-you{
+    max-width:53%;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.carousel-products{
+    display: flex;
+}
+
+
+
+
