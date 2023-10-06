@@ -106,10 +106,11 @@ export class ProductDetailComponent {
     }
   }
 
+  favoriteIcon = this.produit.isFavorite === true ? "favorite_border" : "favorite";
+
   public toggleFavorite(){
     this.produit.isFavorite = !this.produit.isFavorite;
-
-    this.favoriteClass = this.produit.isFavorite === true ? "fav" : "unfav";
+    this.favoriteIcon = this.produit.isFavorite === true ? "favorite_border" : "favorite";
   }
 
   currentPrice = 0
@@ -117,6 +118,8 @@ export class ProductDetailComponent {
   public console(id : number){
     this.currentPrice = id;
   }
+
+  
 
 }
 

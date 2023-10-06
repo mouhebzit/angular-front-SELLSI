@@ -68,7 +68,7 @@
                     <div *ngIf="produit.new" class="new">NOUVEAU</div>
 
                     <button mat-icon-button [color]="favoriteClass" class="favorite" (click)="toggleFavorite()">
-                        <mat-icon>favorite</mat-icon>
+                        <mat-icon>{{ favoriteIcon }}</mat-icon>
                     </button>
 
                 </div>
