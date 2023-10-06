@@ -36,13 +36,8 @@
     margin-right:20px;
 }
 
-.mat-fav{
-    color: black;
-}
 
-.mat-unfav{
-    color:#8a8a8a;
-}
+
 .new{ 
     height:25px;
     display: flex;
