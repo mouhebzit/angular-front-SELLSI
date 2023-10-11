@@ -33,7 +33,7 @@
 
 <div class="header-menu-container" (mouseleave)="closeMenu()">
   <ng-container *ngFor="let tab of tabs; let i = index">
-    <ul class="header-container" (mouseenter)="openMenu(i)">
+    <ul class="header-container" (mouseenter)="openMenu(i)" [class.header-container-focused]="ishovered[i]">
       <li class="header-item-group" >
         <span class="header-name" [class.header-name-focused]="ishovered[i]"><a>{{tab}}</a></span>
         <div class="submenu-container" [class.submenu-container-shown]="ishovered[i]">

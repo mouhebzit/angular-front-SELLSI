@@ -1,0 +1,116 @@
+<div class="main-page">
+  <div class="search-result-wrapper">
+    <div class="search-path-container">
+      <a>Accueil / </a>
+      <a>Nouveautés / </a>
+      <a>Toutes les Nouveautés / </a>
+      <a>Parfum</a>
+    </div>
+    <div class="search-filters-container">
+      <button style="font-size: 17px" mat-button [matMenuTriggerFor]="menu">Nouveautés ^</button>
+      <mat-menu #menu="matMenu">
+        <ng-template matMenuContent>
+          <button mat-menu-item>Trier par</button>
+          <button mat-menu-item>Prix Croissant</button>
+          <button mat-menu-item>Prix Decroissant</button>
+          <button mat-menu-item>Les Mieux Notés</button>
+          <button mat-menu-item>Nouveautés</button>
+          <button mat-menu-item>Meilleurs ventes</button>
+          <button mat-menu-item>Recommandé</button>
+        </ng-template>
+      </mat-menu>
+    </div>
+  </div>
+  <div class="categorie-container">
+    <button class="categorie-button" mat-flat-button *ngFor="let cat of categories;">{{cat}}</button>
+  </div>
+  <div class="main-product-list">
+    <div class="top-info-container">
+      <div class="filter-toggle-button-container" [class.container-toggle-filter-active]="filter_button_is_toggled" >
+        <button class="toggle-filter-button" type="button" mat-button matRippleDisabled (click)="drawerFiltre.toggle();changeContainerWidth()">{{filter_button_text}}</button>
+        <mat-icon>arrow_left</mat-icon>
+      </div>
+      <div class="total-items-container">
+        <span>793 Produits</span>
+      </div>
+
+    </div>
+    <!--              filter left side bar                                   -->
+    <mat-drawer-container class="drawer-container" autosize>
+      <mat-drawer #drawerFiltre class="drawer-element" mode="side">
+<!-- filter side bar  -  - - -  - - - - -  - - - - - - -  - - - -  - - - -  - --------------------------------- -->
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            CATEGORIE
+          </mat-expansion-panel-header>
+
+          <ng-template matExpansionPanelContent>
+            Some deferred content
+          </ng-template>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            MARQUES
+          </mat-expansion-panel-header>
+
+          <ng-template matExpansionPanelContent>
+            Some deferred content
+          </ng-template>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            PRIX
+          </mat-expansion-panel-header>
+
+          <ng-template matExpansionPanelContent>
+            Some deferred content
+          </ng-template>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            PROMOTION
+          </mat-expansion-panel-header>
+
+          <ng-template matExpansionPanelContent>
+            Some deferred content
+          </ng-template>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+             NOTES
+          </mat-expansion-panel-header>
+
+          <ng-template matExpansionPanelContent>
+            Some deferred content
+          </ng-template>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            CONCENTRATION
+          </mat-expansion-panel-header>
+
+          <ng-template matExpansionPanelContent>
+            Some deferred content
+          </ng-template>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            CONTENANCES
+          </mat-expansion-panel-header>
+
+          <ng-template matExpansionPanelContent>
+            Some deferred content
+          </ng-template>
+        </mat-expansion-panel>
+<!-- filter side bar  -  - - -  - - - - -  - - - - - - -  - - - -  - - - -  - --------------------------------- -->
+      </mat-drawer>
+      <div class="main-content-container">
+        <ul class="products-grid-container" [class.products-grid-container-with-filter]="filter_button_is_toggled">
+          <li *ngFor="let product of productList;">
+            <home-product [product] = "product.image"></home-product>
+          </li>
+        </ul>
+      </div>
+    </mat-drawer-container>
+  </div>
+</div>

@@ -24,11 +24,12 @@ import {MatButtonModule} from "@angular/material/button";
     MatIconModule,
     MatButtonModule,
   ],
-  exports: [
-    HomeComponent,
-    CarouselComponent,
+    exports: [
+        HomeComponent,
+        CarouselComponent,
+        HomeProduct,
 
-  ],
+    ],
 
 })
 export class FeaturesModule { }
